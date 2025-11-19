@@ -6,7 +6,7 @@
   "scripts": {
     "start": "next start",
     "build": "next build",
-    "dev": "next dev",
+    "dev": "NEXT_DISABLE_SWC_BINARY=1 next dev",
     "lint": "next lint",
     "lint:debug": "next lint --debug",
     "lint:fix": "next lint --fix",
@@ -20,6 +20,7 @@
     "test:coverage": "jest --coverage",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "prisma generate",
     "docker:prod": "docker compose up --build"
   },
   "dependencies": {
